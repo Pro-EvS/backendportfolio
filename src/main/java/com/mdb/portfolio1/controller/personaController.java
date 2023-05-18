@@ -17,32 +17,33 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
+@CrossOrigin(origins = {"https://portfolio-evelyn.web.app"})
 public class personaController {
     
     @Autowired
     personaService service;
     
-    @GetMapping("/persona/traer")
+    @GetMapping("/sobre-mipersona/traer")
     //ver
     private List<personaEntity> getPersona(){
         return service.getPersona();
     }
     
-    @PostMapping("/guardar/newPersona")
+    @PostMapping("/sobre-mipersona/newPersona")
     //crear
     public String createPersona(@RequestBody personaEntity p){
         service.add(p);
          return "Su cuenta ah sido Creada con exito";
     }
     
-    @DeleteMapping("personas/borrar/{id}")
+    @DeleteMapping("sobre-mipersona{id}/borrar/{id}")
     //borrar Persona
     public String deletePersona(@PathVariable personaEntity p){
         service.delete();
         return "La Cuenta a sido borrada con exito";
     }
     
-    @PutMapping("/personas/editar/{id})")
+    @PutMapping("/personas/sobre-mipersona/editar/{id})")
     //editar Persona
     public personaEntity editpEntity(@PathVariable int id,
             @RequestParam("nombre")String nuevoNombre,

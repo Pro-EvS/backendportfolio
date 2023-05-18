@@ -1,3 +1,4 @@
+security\webSecurity.class
 com\mdb\portfolio1\dto\personaDto.class
 com\mdb\portfolio1\Portfolio1Application.class
 com\mdb\portfolio1\service\personaEstudioSer.class
