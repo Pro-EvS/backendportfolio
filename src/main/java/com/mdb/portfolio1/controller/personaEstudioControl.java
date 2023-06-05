@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins={"https://portfolio-evelyn.web.app"})
+@CrossOrigin(origins ="https://portfolio-evelyn.web.app/")
 public class personaEstudioControl {
     
         @Autowired
@@ -45,7 +45,7 @@ public class personaEstudioControl {
      public personaEstudio editpEstudio(@PathVariable int id,
              @RequestParam("estudios") String nuevoEstudio){
         personaEstudio perEstudio= service.findAll(id);
-            perEstudio.setnombre(nuevoEstudio);
+            perEstudio.setEducacion(nuevoEstudio);
             service.add(perEstudio);
             return perEstudio;
     }

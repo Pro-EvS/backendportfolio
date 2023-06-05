@@ -22,7 +22,7 @@ public class personaService implements personaDto{
 
     @Override
     public personaEntity getPersonaId(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return repositorio.findOne(id);
     }
 
     @Override

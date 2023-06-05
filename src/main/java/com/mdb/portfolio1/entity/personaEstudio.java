@@ -2,31 +2,34 @@
 package com.mdb.portfolio1.entity;
 
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
 
 
-public class personaEstudio extends personaEntity {
+
+@Getter
+@Setter
+@Entity
+public class personaEstudio{
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
-    private String estudios;
+    private String educacion;
 
-    public Long getId() {
-        return Id;
-    }
-
-    public void setId(Long Id) {
-        this.Id = Id;
-    }
 
     public personaEstudio() {
     }
 
     public String getEstudios() {
-        return estudios;
+        return educacion;
     }
 
     public void setEstudios(String estudios) {
-        this.estudios = estudios;
+        this.educacion = estudios;
     }
     
     
