@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins ="https://portfolio-evelyn.web.app/")
 public class personaEstudioControl {
     
-        @Autowired
-        personaEstudioSer service;
+    @Autowired
+    personaEstudioSer service;
     
     @GetMapping("/edicion")
     List<personaEstudio> getEstudios(){
@@ -30,13 +30,12 @@ public class personaEstudioControl {
     
     @PostMapping("edicion/crear/educacion")
     public String createEstudio(@RequestBody personaEstudio p){
-        service.add();
+ 
         return "Haz creado un nuevo archivo de tus Estudios";
     }
    
       @DeleteMapping("edicion/borrar/{id}/educacion")
     public String deletePersona(@PathVariable personaEstudio p){
-        service.delete();
         return "Los estudios fueron borrados con exito";
     }
     
@@ -44,7 +43,7 @@ public class personaEstudioControl {
     @PutMapping("edicion/editar/{id}/educacion")
      public personaEstudio editpEstudio(@PathVariable int id,
              @RequestParam("estudios") String nuevoEstudio){
-        personaEstudio perEstudio= service.findAll(id);
+        personaEstudio perEstudio= service.findAll(nuevoEstudio);
             perEstudio.setEducacion(nuevoEstudio);
             service.add(perEstudio);
             return perEstudio;

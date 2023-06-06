@@ -2,14 +2,30 @@
 package com.mdb.portfolio1.dto;
 
 import com.mdb.portfolio1.entity.personaEstudio;
-import java.util.List;
+import javax.validation.constraints.NotBlank;
 
 
-public interface personaEstudioInter {
+public class personaEstudioInter {
     
-    List<personaEstudio> gEstudios();
-    personaEstudio gEstudioId(int id);
-     personaEstudio edit(personaEstudio p);
-   personaEstudio add(personaEstudio p);
-   personaEstudio delete(int id);
+    @NotBlank
+    private String personaEstudio;
+
+    public personaEstudioInter() {
+    }
+    
+    
+
+    public personaEstudioInter(String personaEstudio) {
+        this.personaEstudio = personaEstudio;
+    }
+
+    public String getPersonaEstudio() {
+        return personaEstudio;
+    }
+
+    public void setPersonaEstudio(String personaEstudio) {
+        this.personaEstudio = personaEstudio;
+    }
+    
+    
 }
